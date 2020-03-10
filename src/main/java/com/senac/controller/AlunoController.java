@@ -44,7 +44,7 @@ public class AlunoController {
 	public ModelAndView salvar(Aluno aluno) {
 		alunoService.salvar(aluno);
 		return listar();
-	}
+	}	
 
 	@GetMapping("/alterar/{id}")
 	public ModelAndView alterarAluno(@PathVariable("id") Integer idAluno) throws ObjectNotFoundException{
@@ -58,5 +58,14 @@ public class AlunoController {
 		alunoService.salvarAlteracao(alunoAlterado);
 		return listar();
 	}
+	
+	@GetMapping("/excluir/{id}")
+	public ModelAndView excluir(@PathVariable("id") Integer id){
+		alunoService.excluir(id);
+		return listar();
+	}
+	
+
+	
 	
 }

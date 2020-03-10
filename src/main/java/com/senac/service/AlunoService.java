@@ -38,5 +38,9 @@ public class AlunoService {
 		return salvar(aluno);
 	}
 	
+	public void excluir(Integer id) {
+		repoAluno.deleteById(id);
+	}
+	
 	
 }

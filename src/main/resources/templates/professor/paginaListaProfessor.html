@@ -8,14 +8,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Listagem de Alunos</title>
+    <title>Listagem de professores</title>
   </head>
   <body>
 
 	<div class="container">
 		<div class="panel-default">
 			<div class="text-center">
-				<h1 class="h4 text-gray-900 mb-4 my-2">Listagem de Alunos</h1>
+				<h1 class="h4 text-gray-900 mb-4 my-2">Listagem de Professores</h1>
 			</div>
 			
 			<div class="panel-body">
@@ -29,13 +29,13 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="aluno : ${alunos}">
-								<td th:text="${aluno.id}"></td>
-								<td th:text="${aluno.nome}"></td>
+							<tr th:each="professor : ${professores}">
+								<td th:text="${professor.id}"></td>
+								<td th:text="${professor.nome}"></td>
 								<td>
 									<div class="btn-group float-right">
-										<a th:href="@{/aluno/alterar/{idAluno}(idAluno=${aluno.id})}" class="btn btn-sm btn-primary text-light mx-1" >ALTERAR</a>
-										<a th:href="@{/aluno/excluir/{idAluno}(idAluno=${aluno.id})}" class="delete btn btn-sm btn-danger text-light mx-1">EXCLUIR</a>
+										<a th:href="@{/professor/alterar/{idProfessor}(idProfessor=${professor.id})}" class="btn btn-sm btn-primary text-light mx-1" >ALTERAR</a>
+										<a th:href="@{/professor/excluir/{idProfessor}(idProfessor=${professor.id})}" class="delete btn btn-sm btn-danger text-light mx-1">EXCLUIR</a>
 									</div>
 								</td>
 							</tr>
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 		</div>
-		<a class="btn btn-sm btn-success text-light" th:href="@{/aluno/cadastrar}">CADASTRAR NOVO ALUNO</a>
+		<a class="btn btn-sm btn-success text-light" th:href="@{/professor/cadastrar}">CADASTRAR NOVO ALUNO</a>
 	</div>
 
 
