@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.senac.domain.Aluno;
 import com.senac.domain.Professor;
 import com.senac.service.ProfessorService;
 
@@ -43,9 +42,9 @@ public class ProfessorController {
 	}	
 
 	@GetMapping("/alterar/{id}")
-	public ModelAndView alterarAluno(@PathVariable("id") Integer idProfessor) throws ObjectNotFoundException{
-		ModelAndView mv = new ModelAndView("aluno/AlterarAluno");
-		mv.addObject("aluno", professorService.buscaPorID(idProfessor));
+	public ModelAndView alterarProfessor(@PathVariable("id") Integer idProfessor) throws ObjectNotFoundException{
+		ModelAndView mv = new ModelAndView("professor/AlterarProfessor");
+		mv.addObject("professor", professorService.buscaPorID(idProfessor));
 		return mv;
 	}
 	
